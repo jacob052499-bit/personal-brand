@@ -393,18 +393,20 @@
       <button id="closeModal" style="position:absolute; right:18px; top:14px; background:none; border:none; color:var(--muted); font-size:22px; cursor:pointer;">×</button>
       <h3 style="margin-bottom:6px; color:#fff;">聯繫 楊鄭耀（阿偉）</h3>
       <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">LINE ID：<strong style="color:#fff;">0982762949</strong> ｜ 手機：<strong style="color:#fff;">0906-369-298</strong><br>Email：jason_yang@megasec.com.tw</p>
-      <form id="cForm" action="https://formsubmit.co/jason2014950605@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="【個人官網諮詢】新客戶預約聯繫 - 楊鄭耀" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://jacob052499-bit.github.io/personal-brand/?sent=1" />
-        <input type="text" name="稱呼" placeholder="您的稱呼" required />
-        <input type="text" name="LINE_ID或電話" placeholder="您的 LINE ID 或聯絡電話" required />
-        <select name="諮詢項目"><option>諮詢開戶與免手續費銀行</option><option>詢問兆期pro 策略投組 / MultiCharts</option><option>台指期 / 選擇權 / 海外期貨避險</option></select>
-        <textarea name="問題內容" rows="3" placeholder="想詢問的問題（選填）"></textarea>
-        <button type="submit" id="submitBtn" class="btn-silver" style="width:100%; justify-content:center;">送出諮詢訊息</button>
+      <form id="cForm">
+        <input type="text" name="name" placeholder="您的稱呼" required />
+        <input type="text" name="contact" placeholder="您的 LINE ID 或聯絡電話" required />
+        <select name="topic"><option>諮詢開戶與免手續費銀行</option><option>詢問兆期pro 策略投組 / MultiCharts</option><option>台指期 / 選擇權 / 海外期貨避險</option></select>
+        <textarea name="message" rows="3" placeholder="想詢問的問題（選填）"></textarea>
+        <button type="submit" id="submitBtn" class="btn-silver" style="width:100%; justify-content:center;">送出諮詢（開啟寄信 / LINE）</button>
       </form>
-      <div id="doneMsg" style="display:none; color:#fff; font-size:14px; margin-top:12px; text-align:center;">✓ 已成功送出！我將盡快回覆您，也可直接加 LINE：0982762949</div>
+      <div id="doneMsg" style="display:none; margin-top:14px; padding:14px; border-radius:12px; background:rgba(255,255,255,0.06); border:1px solid var(--border); font-size:13px; text-align:center;">
+        <div style="color:#fff; font-weight:600; margin-bottom:10px;">✓ 已整理並複製您的諮詢內容！請選擇任一方式傳送：</div>
+        <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+          <a id="mailDirect" href="#" class="btn-silver" style="padding:9px 16px; font-size:13px;">✉️ 一鍵寄信給阿偉</a>
+          <a href="https://line.me/ti/p/~0982762949" target="_blank" rel="noopener" class="btn-ghost" style="padding:9px 16px; font-size:13px;">💬 直接加 LINE 貼上</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -590,13 +592,19 @@
     const m = document.getElementById('modalBg');
     ['openModal','openModal2','openModal3'].forEach(id => document.getElementById(id).onclick = () => m.classList.add('open'));
     document.getElementById('closeModal').onclick = () => m.classList.remove('open');
-    if (new URLSearchParams(window.location.search).get('sent') === '1') {
-      m.classList.add('open');
+    document.getElementById('cForm').onsubmit = e => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const name = fd.get('name');
+      const contact = fd.get('contact');
+      const topic = fd.get('topic');
+      const msg = fd.get('message') || '（未填寫）';
+      const bodyText = `稱呼：${name}\n聯絡方式（LINE/電話）：${contact}\n諮詢項目：${topic}\n問題內容：${msg}`;
+      navigator.clipboard?.writeText(bodyText);
+      const mailUrl = `mailto:jason2014950605@gmail.com?subject=${encodeURIComponent('【個人官網諮詢】' + name + ' - ' + topic)}&body=${encodeURIComponent(bodyText)}`;
+      document.getElementById('mailDirect').href = mailUrl;
       document.getElementById('doneMsg').style.display = 'block';
-    }
-    document.getElementById('cForm').onsubmit = () => {
-      const btn = document.getElementById('submitBtn');
-      btn.textContent = '傳送中...';
+      window.location.href = mailUrl;
     };
   </script>
 </body>
