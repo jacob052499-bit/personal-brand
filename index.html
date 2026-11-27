@@ -393,11 +393,15 @@
       <button id="closeModal" style="position:absolute; right:18px; top:14px; background:none; border:none; color:var(--muted); font-size:22px; cursor:pointer;">×</button>
       <h3 style="margin-bottom:6px; color:#fff;">聯繫 楊鄭耀（阿偉）</h3>
       <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">LINE ID：<strong style="color:#fff;">0982762949</strong> ｜ 手機：<strong style="color:#fff;">0906-369-298</strong><br>Email：jason_yang@megasec.com.tw</p>
-      <form id="cForm">
-        <input type="text" name="name" placeholder="您的稱呼" required />
-        <input type="text" name="contact" placeholder="您的 LINE ID 或聯絡電話" required />
-        <select name="topic"><option>諮詢開戶與免手續費銀行</option><option>詢問兆期pro 策略投組 / MultiCharts</option><option>台指期 / 選擇權 / 海外期貨避險</option></select>
-        <textarea name="message" rows="3" placeholder="想詢問的問題（選填）"></textarea>
+      <form id="cForm" action="https://formsubmit.co/jason2014950605@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="【個人官網諮詢】新客戶預約聯繫 - 楊鄭耀" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://jacob052499-bit.github.io/personal-brand/?sent=1" />
+        <input type="text" name="稱呼" placeholder="您的稱呼" required />
+        <input type="text" name="LINE_ID或電話" placeholder="您的 LINE ID 或聯絡電話" required />
+        <select name="諮詢項目"><option>諮詢開戶與免手續費銀行</option><option>詢問兆期pro 策略投組 / MultiCharts</option><option>台指期 / 選擇權 / 海外期貨避險</option></select>
+        <textarea name="問題內容" rows="3" placeholder="想詢問的問題（選填）"></textarea>
         <button type="submit" id="submitBtn" class="btn-silver" style="width:100%; justify-content:center;">送出諮詢訊息</button>
       </form>
       <div id="doneMsg" style="display:none; color:#fff; font-size:14px; margin-top:12px; text-align:center;">✓ 已成功送出！我將盡快回覆您，也可直接加 LINE：0982762949</div>
@@ -586,40 +590,13 @@
     const m = document.getElementById('modalBg');
     ['openModal','openModal2','openModal3'].forEach(id => document.getElementById(id).onclick = () => m.classList.add('open'));
     document.getElementById('closeModal').onclick = () => m.classList.remove('open');
-    document.getElementById('cForm').onsubmit = async e => {
-      e.preventDefault();
+    if (new URLSearchParams(window.location.search).get('sent') === '1') {
+      m.classList.add('open');
+      document.getElementById('doneMsg').style.display = 'block';
+    }
+    document.getElementById('cForm').onsubmit = () => {
       const btn = document.getElementById('submitBtn');
-      const done = document.getElementById('doneMsg');
-      const fd = new FormData(e.target);
-      btn.disabled = true;
       btn.textContent = '傳送中...';
-      try {
-        const res = await fetch('https://formsubmit.co/ajax/jason2014950605@gmail.com', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            稱呼: fd.get('name'),
-            聯絡方式_LINE或電話: fd.get('contact'),
-            諮詢項目: fd.get('topic'),
-            問題內容: fd.get('message') || '（未填寫）',
-            _subject: '【個人官網諮詢】新客戶預約聯繫 - 楊鄭耀',
-            _template: 'table',
-            _captcha: 'false'
-          })
-        });
-        if (res.ok) {
-          done.style.display = 'block';
-          e.target.reset();
-        } else {
-          throw new Error('Submit failed');
-        }
-      } catch (err) {
-        done.innerHTML = '傳送時發生連線問題，請直接加 LINE：<strong>0982762949</strong> 或來電 <strong>0906-369-298</strong>。';
-        done.style.display = 'block';
-      } finally {
-        btn.disabled = false;
-        btn.textContent = '送出諮詢訊息';
-      }
     };
   </script>
 </body>
