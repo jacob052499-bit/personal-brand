@@ -164,7 +164,15 @@
     .plat-btn { background: var(--surface); color: var(--muted); border: 1px solid var(--border-dim); padding: 8px 18px; border-radius: 999px; cursor: pointer; font-size: 13px; }
     .plat-btn.active { background: rgba(255,255,255,0.12); color: #fff; border-color: #fff; }
     .plat-list { display: flex; flex-wrap: wrap; gap: 10px; }
-    .plat-chip { background: var(--surface-2); border: 1px solid var(--border); padding: 10px 16px; border-radius: 10px; font-size: 14px; color: #fff; }
+    .plat-chip {
+      display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+      background: var(--surface-2); border: 1px solid var(--border); padding: 12px 18px;
+      border-radius: 12px; font-size: 14px; color: #fff; transition: all 0.2s;
+    }
+    .plat-chip:hover { border-color: #fff; background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+    .plat-chip small { font-size: 11px; color: var(--silver-dim); border: 1px solid var(--border-dim); padding: 2px 8px; border-radius: 999px; }
+    .plat-sub { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; font-size: 12px; color: var(--muted); }
+    .plat-sub a { color: var(--silver); text-decoration: underline; }
 
     /* Products & Onboarding */
     .prod-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 22px 0; }
@@ -513,13 +521,27 @@
       setTimeout(() => this.textContent = '複製 LINE ID：0982762949', 2200);
     };
 
-    // Platforms switcher
+    // Platforms switcher with direct official download links
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const plats = {
-      mobile: ['📱 兆豐行動VIP', '📱 兆期GO'],
-      pc: ['💻 全球理財通', '💻 新兆豐贏家', '💻 兆豐HTS']
+      mobile: [
+        { name: '📱 兆豐行動VIP', tag: isIOS ? 'App Store ↗' : 'Google Play ↗', url: isIOS ? 'https://apps.apple.com/tw/app/%E5%85%86%E8%B1%90%E8%AD%89%E5%88%B8-%E5%85%86%E8%B1%90%E8%A1%8C%E5%8B%95vip/id368177361' : 'https://play.google.com/store/apps/details?id=com.mega', ios: 'https://apps.apple.com/tw/app/%E5%85%86%E8%B1%90%E8%AD%89%E5%88%B8-%E5%85%86%E8%B1%90%E8%A1%8C%E5%8B%95vip/id368177361', android: 'https://play.google.com/store/apps/details?id=com.mega' },
+        { name: '📱 兆期GO', tag: isIOS ? 'App Store ↗' : 'Google Play ↗', url: isIOS ? 'https://apps.apple.com/tw/app/%E5%85%86%E6%9C%9Fgo/id6763511923' : 'https://play.google.com/store/apps/details?id=com.mega.x4', ios: 'https://apps.apple.com/tw/app/%E5%85%86%E6%9C%9Fgo/id6763511923', android: 'https://play.google.com/store/apps/details?id=com.mega.x4' }
+      ],
+      pc: [
+        { name: '💻 全球理財通', tag: '前往下載 ↗', url: 'https://www.megafutures.com.tw/emegaFutures/downloadSystem.do' },
+        { name: '💻 新兆豐贏家', tag: '直接下載 ↗', url: 'https://xtupdate.xq.com.tw/tradedas/installer/daqmega/tw/megasetup.exe' },
+        { name: '💻 兆豐HTS', tag: '直接下載 ↗', url: 'https://www.emega.com.tw/download/mega_hts_setup.exe' }
+      ]
     };
     function renderPlat(key) {
-      document.getElementById('platList').innerHTML = plats[key].map(p => `<div class="plat-chip">${p}</div>`).join('');
+      const chips = plats[key].map(p =>
+        `<a class="plat-chip" href="${p.url}" target="_blank" rel="noopener"><span>${p.name}</span><small>${p.tag}</small></a>`
+      ).join('');
+      const extra = key === 'mobile'
+        ? `<div class="plat-sub" style="width:100%">手動選擇版本：兆豐行動VIP（<a href="${plats.mobile[0].ios}" target="_blank" rel="noopener">iOS</a> / <a href="${plats.mobile[0].android}" target="_blank" rel="noopener">Android</a>）｜ 兆期GO（<a href="${plats.mobile[1].ios}" target="_blank" rel="noopener">iOS</a> / <a href="${plats.mobile[1].android}" target="_blank" rel="noopener">Android</a>）</div>`
+        : `<div class="plat-sub" style="width:100%">或前往 <a href="https://www.megafutures.com.tw/emegaFutures/downloadSystem.do" target="_blank" rel="noopener">兆豐期貨官方下載中心 ↗</a></div>`;
+      document.getElementById('platList').innerHTML = chips + extra;
     }
     document.querySelectorAll('.plat-btn').forEach(b => b.onclick = () => {
       document.querySelectorAll('.plat-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); renderPlat(b.dataset.plat);
