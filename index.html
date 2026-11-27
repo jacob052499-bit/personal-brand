@@ -8,21 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #030407;
-      --surface: #0a0c12;
-      --surface-2: #121622;
-      --silver: #e2e8f0;
+      --bg: #141824;
+      --surface: #1b2030;
+      --surface-2: #242b3f;
+      --silver: #f1f5f9;
       --silver-bright: #ffffff;
-      --silver-dim: #94a3b8;
-      --border: rgba(226, 232, 240, 0.18);
-      --border-dim: rgba(255, 255, 255, 0.08);
-      --muted: #94a3b8;
+      --silver-dim: #cbd5e1;
+      --border: rgba(226, 232, 240, 0.26);
+      --border-dim: rgba(255, 255, 255, 0.14);
+      --muted: #cbd5e1;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', 'Noto Sans TC', sans-serif;
-      background: radial-gradient(circle at 15% 0%, #101420 0%, var(--bg) 55%);
+      background: radial-gradient(circle at 20% 0%, #263047 0%, #161b29 45%, #111520 100%);
       color: var(--silver);
       line-height: 1.75;
       overflow-x: hidden;
@@ -116,7 +116,7 @@
     .particle-showcase {
       position: relative; min-height: 620px; width: 100%;
       border-top: 1px solid var(--border-dim); border-bottom: 1px solid var(--border-dim);
-      background: radial-gradient(circle at 50% 48%, rgba(148, 163, 184, 0.13) 0%, #020306 65%);
+      background: radial-gradient(circle at 50% 48%, rgba(203, 213, 225, 0.20) 0%, #161b29 68%);
       display: flex; flex-direction: column; justify-content: space-between;
       padding: 44px 36px; overflow: hidden;
     }
@@ -185,8 +185,8 @@
 
     /* Bright & Clear Education Section */
     .edu-panel {
-      background: linear-gradient(145deg, #161b28 0%, #0e121b 100%);
-      border: 1px solid rgba(255,255,255,0.22); border-radius: 22px; padding: 40px 32px;
+      background: linear-gradient(145deg, #242c40 0%, #1b2131 100%);
+      border: 1px solid rgba(255,255,255,0.26); border-radius: 22px; padding: 40px 32px;
     }
     .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 22px; }
     .edu-card {
@@ -261,7 +261,7 @@
       </div>
       <div class="social-row">
         <a class="soc-pill" href="tel:0906369298">📞 0906-369-298</a>
-        <a class="soc-pill" href="mailto:jason_yang@megasec.com.tw">✉️ jason_yang@megasec.com.tw</a>
+        <a class="soc-pill" href="mailto:jason2014950605@gmail.com">✉️ jason2014950605@gmail.com</a>
         <a class="soc-pill" href="https://www.instagram.com/yangzhengyao9?lqvp=YzhvbTI3M25naDhn" target="_blank" rel="noopener">Instagram ↗</a>
         <a class="soc-pill" href="https://www.threads.com/@yangzhengyao9" target="_blank" rel="noopener">Threads ↗</a>
         <a class="soc-pill" href="https://www.facebook.com/share/1A1zboXZVg/" target="_blank" rel="noopener">Facebook ↗</a>
@@ -378,7 +378,7 @@
 
   <footer>
     <div class="footer-info">
-      <div><strong>兆豐期貨總公司</strong> ｜ 專線：02-2327-9062 ｜ 手機：0906-369-298 ｜ Email：jason_yang@megasec.com.tw ｜ 地址：台北市忠孝東路二段95號2樓</div>
+      <div><strong>兆豐期貨總公司</strong> ｜ 專線：02-2327-9062 ｜ 手機：0906-369-298 ｜ Email：jason2014950605@gmail.com ｜ 地址：台北市忠孝東路二段95號2樓</div>
       <div class="mono">許可證號：115年金管期總字第021號</div>
     </div>
     <div class="warning-box">
@@ -391,7 +391,7 @@
     <div class="modal">
       <button id="closeModal" style="position:absolute; right:18px; top:14px; background:none; border:none; color:var(--muted); font-size:22px; cursor:pointer;">×</button>
       <h3 style="margin-bottom:6px; color:#fff;">聯繫 楊鄭耀（阿偉）</h3>
-      <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">LINE ID：<strong style="color:#fff;">0982762949</strong> ｜ 手機：<strong style="color:#fff;">0906-369-298</strong><br>Email：jason_yang@megasec.com.tw</p>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">LINE ID：<strong style="color:#fff;">0982762949</strong> ｜ 手機：<strong style="color:#fff;">0906-369-298</strong><br>Email：jason2014950605@gmail.com</p>
       <form id="cForm">
         <input type="text" name="name" placeholder="您的稱呼" required />
         <input type="text" name="contact" placeholder="您的 LINE ID 或聯絡電話" required />
@@ -593,7 +593,7 @@
       btn.disabled = true;
       btn.textContent = '傳送中...';
       try {
-        const res = await fetch('https://formsubmit.co/ajax/jason_yang@megasec.com.tw', {
+        const res = await fetch('https://formsubmit.co/ajax/jason2014950605@gmail.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({
