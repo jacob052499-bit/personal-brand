@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>您的名字｜黑曜銀個人品牌官方網站</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <title>楊鄭耀（阿偉）｜兆豐期貨 業務部｜量化交易與風控顧問</title>
+  <meta name="description" content="兆豐期貨業務部業務員楊鄭耀（阿偉）。穩定的系統帶來穩定的心態，穩定的心態造就穩健的財富。專長量化交易、MultiCharts、兆期pro策略投組與期貨避險。" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #030407;
       --surface: #0a0c12;
-      --surface-2: #111520;
+      --surface-2: #121622;
       --silver: #e2e8f0;
       --silver-bright: #ffffff;
       --silver-dim: #94a3b8;
       --border: rgba(226, 232, 240, 0.18);
       --border-dim: rgba(255, 255, 255, 0.08);
-      --muted: #8b95a5;
+      --muted: #94a3b8;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -32,7 +33,7 @@
     #preloader {
       position: fixed; inset: 0; z-index: 999; background: #020305;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.75s;
     }
     #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
     .loader-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(64px, 10vw, 110px); color: #fff; line-height: 1; }
@@ -46,17 +47,17 @@
     /* Navbar */
     nav {
       position: sticky; top: 0; z-index: 60;
-      background: rgba(3, 4, 7, 0.86); backdrop-filter: blur(14px);
+      background: rgba(3, 4, 7, 0.88); backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-dim);
     }
-    .nav-in { max-width: 1180px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.08em; font-size: 14px; }
+    .nav-in { max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.06em; font-size: 14px; color: #fff; }
     .mark {
       width: 34px; height: 34px; border-radius: 8px;
       background: linear-gradient(135deg, #ffffff 0%, #94a3b8 60%, #e2e8f0 100%);
       color: #030407; display: grid; place-items: center; font-family: 'Cinzel', serif; font-weight: 700;
     }
-    .nav-links { display: flex; gap: 26px; font-size: 13px; color: var(--muted); }
+    .nav-links { display: flex; gap: 24px; font-size: 13px; color: var(--muted); }
     .nav-links a { color: inherit; text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: #fff; }
 
@@ -64,18 +65,20 @@
       background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 65%, #94a3b8 100%);
       color: #030407; font-weight: 700; font-size: 13px; padding: 11px 22px;
       border-radius: 999px; border: none; cursor: pointer; text-decoration: none; transition: transform 0.15s, box-shadow 0.25s;
+      display: inline-flex; align-items: center; gap: 6px;
     }
     .btn-silver:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,255,255,0.22); }
     .btn-ghost {
       background: rgba(255,255,255,0.03); color: var(--silver); border: 1px solid var(--border);
-      padding: 11px 22px; border-radius: 999px; font-size: 13px; cursor: pointer; text-decoration: none; transition: all 0.2s;
+      padding: 11px 20px; border-radius: 999px; font-size: 13px; cursor: pointer; text-decoration: none; transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 6px;
     }
     .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
 
     /* 1. Formal Hero with Real Portrait */
     .hero {
-      max-width: 1180px; margin: 0 auto; padding: 72px 24px 84px;
-      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 52px; align-items: center;
+      max-width: 1180px; margin: 0 auto; padding: 64px 24px 76px;
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
     }
     .role-badge {
       display: inline-flex; align-items: center; gap: 8px;
@@ -83,34 +86,40 @@
       padding: 6px 14px; border-radius: 999px; font-size: 13px; color: var(--silver); margin-bottom: 18px;
     }
     .role-dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px #fff; }
-    .hero h1 { font-size: clamp(34px, 4.4vw, 50px); line-height: 1.18; margin-bottom: 16px; letter-spacing: -0.02em; color: #fff; }
+    .hero h1 { font-size: clamp(32px, 4.2vw, 48px); line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.02em; color: #fff; }
     .silver-grad { background: linear-gradient(120deg, #ffffff 0%, #cbd5e1 55%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero p { color: var(--muted); font-size: 15px; margin-bottom: 28px; max-width: 530px; }
-    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; border-top: 1px solid var(--border-dim); padding-top: 24px; margin-top: 32px; }
-    .stats strong { display: block; font-size: 28px; color: #fff; font-family: 'Cormorant Garamond', serif; }
+    .slogan { font-size: 17px; color: #e2e8f0; font-weight: 500; margin-bottom: 14px; border-left: 2px solid var(--silver-dim); padding-left: 14px; }
+    .hero p.bio { color: var(--muted); font-size: 15px; margin-bottom: 24px; max-width: 540px; }
+
+    .social-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    .soc-pill {
+      font-size: 12px; color: var(--silver); border: 1px solid var(--border-dim);
+      background: var(--surface); padding: 6px 14px; border-radius: 999px; text-decoration: none; transition: all 0.2s;
+    }
+    .soc-pill:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; border-top: 1px solid var(--border-dim); padding-top: 22px; margin-top: 28px; }
+    .stats strong { display: block; font-size: 20px; color: #fff; }
     .stats span { font-size: 12px; color: var(--muted); }
 
     .portrait-card {
       background: linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 100%);
-      border: 1px solid var(--border); border-radius: 22px; padding: 24px; text-align: center;
+      border: 1px solid var(--border); border-radius: 22px; padding: 20px; text-align: center;
       box-shadow: 0 28px 64px rgba(0, 0, 0, 0.7); transition: transform 0.2s ease, border-color 0.3s;
     }
     .portrait-card:hover { border-color: rgba(255,255,255,0.45); }
-    .portrait-placeholder {
-      height: 350px; border-radius: 14px;
-      background: radial-gradient(circle at 50% 30%, #232836 0%, #090b10 85%);
-      border: 1px dashed rgba(226, 232, 240, 0.3);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      color: var(--silver); margin-bottom: 18px;
+    .portrait-img {
+      width: 100%; height: 370px; object-fit: cover; object-position: top center;
+      border-radius: 14px; margin-bottom: 16px; border: 1px solid var(--border-dim);
     }
 
     /* 2. Dedicated Professional 3D Particle Mindset Showcase */
     .particle-showcase {
-      position: relative; min-height: 640px; width: 100%;
+      position: relative; min-height: 620px; width: 100%;
       border-top: 1px solid var(--border-dim); border-bottom: 1px solid var(--border-dim);
       background: radial-gradient(circle at 50% 48%, rgba(148, 163, 184, 0.13) 0%, #020306 65%);
       display: flex; flex-direction: column; justify-content: space-between;
-      padding: 48px 36px; overflow: hidden;
+      padding: 44px 36px; overflow: hidden;
     }
     #particleCanvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; cursor: grab; }
     #particleCanvas:active { cursor: grabbing; }
@@ -120,8 +129,7 @@
     }
     .ps-flank {
       position: relative; z-index: 2; max-width: 1240px; width: 100%; margin: auto;
-      display: flex; justify-content: space-between; align-items: center; pointer-events: none;
-      padding: 40px 0;
+      display: flex; justify-content: space-between; align-items: center; pointer-events: none; padding: 36px 0;
     }
     .flank-word {
       font-size: clamp(22px, 3.6vw, 50px); font-weight: 300; letter-spacing: 0.24em;
@@ -133,236 +141,261 @@
     }
     .mind-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
     .m-btn {
-      background: rgba(10,12,18,0.8); color: var(--muted); border: 1px solid var(--border-dim);
+      background: rgba(10,12,18,0.82); color: var(--muted); border: 1px solid var(--border-dim);
       padding: 8px 16px; border-radius: 999px; cursor: pointer; font-size: 13px; backdrop-filter: blur(8px); transition: all 0.2s;
     }
-    .m-btn.active { background: rgba(255,255,255,0.14); color: #fff; border-color: #fff; }
+    .m-btn.active { background: rgba(255,255,255,0.15); color: #fff; border-color: #fff; }
     .mind-card {
-      max-width: 560px; background: rgba(10,12,18,0.78); border: 1px solid var(--border);
+      max-width: 560px; background: rgba(10,12,18,0.82); border: 1px solid var(--border);
       backdrop-filter: blur(12px); border-radius: 14px; padding: 18px 22px;
     }
 
     /* Standard Sections */
-    section.content-sec { padding: 88px 24px; max-width: 1180px; margin: 0 auto; }
+    section.content-sec { padding: 80px 24px; max-width: 1180px; margin: 0 auto; }
     .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--silver-dim); margin-bottom: 10px; }
-    h2.sec-title { font-size: clamp(26px, 3.2vw, 36px); font-weight: 500; letter-spacing: -0.02em; color: #fff; margin-bottom: 12px; }
+    h2.sec-title { font-size: clamp(26px, 3.2vw, 34px); font-weight: 500; letter-spacing: -0.02em; color: #fff; margin-bottom: 12px; }
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* Orbital + Timeline + Services + Media */
-    .orbital-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    #orbitalCanvas { width: 100%; height: 300px; display: block; }
+    /* Orbital + Platforms */
+    .orbital-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+    #orbitalCanvas { width: 100%; height: 280px; display: block; }
+    .plat-tabs { display: flex; gap: 8px; margin: 18px 0 14px; }
+    .plat-btn { background: var(--surface); color: var(--muted); border: 1px solid var(--border-dim); padding: 8px 18px; border-radius: 999px; cursor: pointer; font-size: 13px; }
+    .plat-btn.active { background: rgba(255,255,255,0.12); color: #fff; border-color: #fff; }
+    .plat-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .plat-chip { background: var(--surface-2); border: 1px solid var(--border); padding: 10px 16px; border-radius: 10px; font-size: 14px; color: #fff; }
 
-    .tl-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin: 24px 0; }
-    .tl-btn { background: var(--surface); color: var(--muted); border: 1px solid var(--border-dim); padding: 10px 20px; border-radius: 999px; cursor: pointer; font-size: 13px; }
-    .tl-btn.active { background: rgba(255,255,255,0.1); color: #fff; border-color: #fff; }
-    .tl-box { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 34px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center; }
-    .tl-list { list-style: none; border-left: 1px solid var(--border); padding-left: 22px; }
-    .tl-list li { font-size: 14px; color: var(--silver); margin-bottom: 10px; }
-    .tl-list li::before { content: "◇ "; color: var(--silver-dim); }
+    /* Products & Onboarding */
+    .prod-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 22px 0; }
+    .prod-btn { background: var(--surface); color: var(--muted); border: 1px solid var(--border-dim); padding: 9px 18px; border-radius: 999px; cursor: pointer; font-size: 13px; }
+    .prod-btn.active { background: rgba(255,255,255,0.12); color: #fff; border-color: #fff; }
+    .prod-box { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 30px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: center; }
+    .bank-strip {
+      margin-top: 24px; background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;
+    }
 
-    .srv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
-    .srv-card { background: var(--surface); border: 1px solid var(--border-dim); border-radius: 16px; padding: 26px; cursor: pointer; transition: all 0.25s; }
-    .srv-card:hover, .srv-card.open { border-color: var(--silver); background: var(--surface-2); transform: translateY(-2px); }
-    .srv-more { max-height: 0; overflow: hidden; transition: max-height 0.3s; color: var(--muted); font-size: 14px; }
-    .srv-card.open .srv-more { max-height: 150px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border-dim); }
+    /* Bright & Clear Education Section */
+    .edu-panel {
+      background: linear-gradient(145deg, #161b28 0%, #0e121b 100%);
+      border: 1px solid rgba(255,255,255,0.22); border-radius: 22px; padding: 40px 32px;
+    }
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 22px; }
+    .edu-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px; padding: 22px; transition: transform 0.2s, border-color 0.2s;
+    }
+    .edu-card:hover { transform: translateY(-3px); border-color: #fff; }
+    .edu-tag { display: inline-block; font-size: 11px; color: #030407; background: #e2e8f0; padding: 2px 10px; border-radius: 999px; font-weight: 700; margin-bottom: 10px; }
 
-    .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 24px 0; }
-    .f-btn { background: var(--surface); color: var(--muted); border: 1px solid var(--border-dim); padding: 8px 16px; border-radius: 999px; cursor: pointer; font-size: 13px; }
-    .f-btn.active { background: rgba(255,255,255,0.1); color: #fff; border-color: #fff; }
-    .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-    .media-card { background: var(--surface); border: 1px solid var(--border-dim); border-radius: 14px; padding: 24px; transition: border-color 0.2s, transform 0.2s; }
-    .media-card:hover { border-color: var(--silver); transform: translateY(-3px); }
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid var(--border-dim); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; color: #fff; padding: 18px 0; font-size: 16px; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-q span { color: var(--silver-dim); font-size: 20px; transition: transform 0.2s; }
+    .faq-item.open .faq-q span { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.25s ease; color: var(--muted); font-size: 14px; }
+    .faq-item.open .faq-a { max-height: 150px; padding-bottom: 16px; }
 
+    /* Modal */
     .modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.82); backdrop-filter: blur(10px); display: none; place-items: center; z-index: 200; padding: 20px; }
     .modal-bg.open { display: grid; }
     .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; max-width: 450px; width: 100%; padding: 32px; position: relative; }
     .modal input, .modal select, .modal textarea { width: 100%; background: #030407; border: 1px solid var(--border-dim); color: #fff; padding: 12px 14px; border-radius: 10px; margin-bottom: 12px; font-size: 14px; font-family: inherit; }
 
-    footer { border-top: 1px solid var(--border-dim); padding: 40px 24px; text-align: center; color: var(--muted); font-size: 12px; letter-spacing: 0.06em; }
+    footer { border-top: 1px solid var(--border-dim); padding: 44px 24px; max-width: 1180px; margin: 0 auto; color: var(--muted); font-size: 13px; }
+    .footer-info { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 18px; color: var(--silver); }
+    .warning-box { background: rgba(255,255,255,0.03); border: 1px solid var(--border-dim); border-radius: 10px; padding: 14px 18px; font-size: 12px; color: var(--muted); line-height: 1.65; }
 
     @media (max-width: 860px) {
-      .hero, .orbital-grid, .tl-box, .srv-grid, .ps-bottom { grid-template-columns: 1fr; }
-      .hero { padding: 40px 20px 56px; gap: 32px; }
-      .portrait-placeholder { height: 260px; }
+      .hero, .orbital-grid, .prod-box, .ps-bottom { grid-template-columns: 1fr; }
+      .hero { padding: 36px 20px 56px; gap: 32px; }
+      .portrait-img { height: 300px; }
       .particle-showcase { min-height: 560px; padding: 32px 20px; }
       .ps-flank { flex-direction: column; gap: 180px; padding: 20px 0; }
       .flank-word { font-size: 24px; letter-spacing: 0.18em; }
-      .tl-list { border-left: none; padding-left: 0; border-top: 1px solid var(--border-dim); padding-top: 16px; }
       .nav-links { display: none; }
-      nav .nav-in { padding: 14px 18px; }
+      .edu-panel { padding: 28px 20px; }
     }
   </style>
 </head>
 <body>
   <div id="preloader">
     <div class="loader-num" id="loaderNum">0</div>
-    <div class="loader-sub mono">Preparing the space · Executive Profile</div>
+    <div class="loader-sub mono">楊鄭耀（阿偉）· 兆豐期貨 業務部</div>
     <div class="loader-line"><div class="loader-fill" id="loaderFill"></div></div>
   </div>
   <div class="scroll-bar" id="scrollBar"></div>
 
   <nav>
     <div class="nav-in">
-      <div class="brand"><div class="mark">Y</div><span>YOUR NAME</span></div>
+      <div class="brand"><div class="mark">Y</div><span>楊鄭耀 · 阿偉</span></div>
       <div class="nav-links">
-        <a href="#mindset">決策思維</a>
-        <a href="#timeline">專業履歷</a>
-        <a href="#services">顧問服務</a>
-        <a href="#media">精選內容</a>
+        <a href="#mindset">量化思維</a>
+        <a href="#platforms">下單軟體</a>
+        <a href="#products">主打商品</a>
+        <a href="#academy">教學專區</a>
+        <a href="#faq">Q&amp;A</a>
       </div>
       <button class="btn-silver" id="openModal">預約諮詢</button>
     </div>
   </nav>
 
-  <!-- 1. Formal Personal Hero with Real Portrait -->
+  <!-- 1. Formal Personal Hero -->
   <section class="hero">
     <div>
-      <div class="role-badge"><span class="role-dot"></span>現任：XX金融機構 業務副總 ｜ 專業財經講師</div>
-      <h1>你好，我是 <span class="silver-grad">您的名字</span><br>陪你走得長遠的交易顧問</h1>
-      <p>在充滿雜訊與誘惑的金融市場中，我堅持「合法監管、風險優先、透明紀律」。十年來協助上千位投資人建立正確的交易觀念與實戰防護網。</p>
+      <div class="role-badge"><span class="role-dot"></span>兆豐期貨 業務部 業務員 ｜ 115年金管期總字第021號</div>
+      <h1>你好，我是 <span class="silver-grad">楊鄭耀（阿偉）</span></h1>
+      <div class="slogan">「穩定的系統帶來穩定的心態，穩定的心態造就穩健的財富。」</div>
+      <p class="bio">從高中接觸股票市場，到大學深入鑽研量化交易與風險控管。我專注於協助交易人建立有紀律的系統架構，並堅持即時回覆——即使在晚上或週末，您依然找得到我。</p>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <button class="btn-silver" id="openModal2">預約 1 對 1 諮詢</button>
-        <button class="btn-ghost" id="copyLine">複製 LINE ID：@yourid</button>
+        <button class="btn-silver" id="openModal2">立即預約諮詢 / 開戶引導</button>
+        <button class="btn-ghost" id="copyLine">複製 LINE ID：0982762949</button>
+      </div>
+      <div class="social-row">
+        <a class="soc-pill" href="https://www.instagram.com/yangzhengyao9?lqvp=YzhvbTI3M25naDhn" target="_blank" rel="noopener">Instagram ↗</a>
+        <a class="soc-pill" href="https://www.threads.com/@yangzhengyao9" target="_blank" rel="noopener">Threads ↗</a>
+        <a class="soc-pill" href="https://www.facebook.com/share/1A1zboXZVg/" target="_blank" rel="noopener">Facebook ↗</a>
       </div>
       <div class="stats">
-        <div><strong class="counter" data-target="10">0</strong><span>年金融實戰資歷</span></div>
-        <div><strong class="counter" data-target="2500">0</strong><span>位以上服務學員</span></div>
-        <div><strong class="counter" data-target="80">0</strong><span>場以上講座與內訓</span></div>
+        <div><strong>高中起</strong><span>接觸股票累積盤感</span></div>
+        <div><strong>大學起</strong><span>專研量化交易與風控</span></div>
+        <div><strong>晚上・週末</strong><span>即時回覆找得到人</span></div>
       </div>
     </div>
 
     <div class="portrait-card" id="tiltCard">
-      <div class="portrait-placeholder">
-        <div style="font-size:18px; font-weight:700;">[ 您的專業形象照 ]</div>
-        <div style="font-size:12px; color:var(--muted); margin-top:6px;">正式個人肖像照區域</div>
-      </div>
-      <div style="font-weight:700; font-size:17px; color:#fff;">您的名字（品牌稱號）</div>
-      <div style="font-size:13px; color:var(--muted); margin-top:4px;">「先控風險，再談獲利。」</div>
+      <img class="portrait-img" src="./portrait.jpg" alt="楊鄭耀（阿偉）專業形象照" />
+      <div style="font-weight:700; font-size:17px; color:#fff;">楊鄭耀 / 阿偉</div>
+      <div style="font-size:13px; color:var(--muted); margin-top:4px;">兆豐期貨 業務部 業務員 · 專線 02-2327-9062</div>
     </div>
   </section>
 
-  <!-- 2. Dedicated Professional 3D Particle Person Showcase -->
+  <!-- 2. Dedicated Professional 3D Particle Mindset Showcase -->
   <section id="mindset" class="particle-showcase">
     <canvas id="particleCanvas"></canvas>
     <div class="ps-top mono" style="font-size:11px; color:var(--silver-dim); letter-spacing:0.14em;">
-      <span>[01] DECISION ARCHITECTURE · 交易決策與風控思維</span>
+      <span>[01] QUANTITATIVE MINDSET · 系統與心態核心</span>
       <span id="mouseHud">X:000 Y:000</span>
     </div>
-
     <div class="ps-flank">
-      <div class="flank-word">ENVISION</div>
-      <div class="flank-word">DISCIPLINE</div>
+      <div class="flank-word">SYSTEM</div>
+      <div class="flank-word">MINDSET</div>
     </div>
-
     <div class="ps-bottom">
       <div>
         <div class="mind-tabs">
-          <button class="m-btn active" data-m="0">01 · 理性風控大腦</button>
-          <button class="m-btn" data-m="1">02 · 宏觀全局視野</button>
-          <button class="m-btn" data-m="2">03 · 系統紀律執行</button>
+          <button class="m-btn active" data-m="0">01 · 量化交易系統</button>
+          <button class="m-btn" data-m="1">02 · 嚴格風險控管</button>
+          <button class="m-btn" data-m="2">03 · 晚上週末即時回覆</button>
         </div>
         <div class="mind-card">
-          <h3 id="mTitle" style="font-size:18px; color:#fff; margin-bottom:6px;">理性風控：在進場前先定義好退場線</h3>
-          <p id="mDesc" style="font-size:13px; color:var(--muted);">市場情緒永遠在貪婪與恐懼間擺盪。我協助客戶建立量化的倉位計算模型，讓每一筆決策都建立在冷靜的數學與機率之上。</p>
+          <h3 id="mTitle" style="font-size:18px; color:#fff; margin-bottom:6px;">穩定的系統，才能帶來穩定的心態</h3>
+          <p id="mDesc" style="font-size:13px; color:var(--muted);">透過兆期pro 策略投組與 MultiCharts 邏輯回測，將進出場條件標準化，減少盤中情緒干擾，讓執行更純粹。</p>
         </div>
       </div>
       <div class="mono" style="font-size:11px; color:var(--silver-dim); letter-spacing:0.12em;">
-        [ 移動滑鼠旋轉 3D 粒子 · 點擊觸發脈衝 ]
+        [ 滑動旋轉 3D 粒子 · 點擊觸發脈衝 ]
       </div>
     </div>
   </section>
 
-  <!-- 3. Orbital Halo + Philosophy -->
-  <section class="content-sec reveal">
+  <!-- 3. Platforms & Orbital Halo -->
+  <section id="platforms" class="content-sec reveal">
     <div class="orbital-grid">
       <div>
-        <div class="eyebrow mono">02 / INSTITUTIONAL TRUST</div>
-        <h2 class="sec-title">用機構級的嚴謹<br>守護每一份託付</h2>
-        <p style="color:var(--muted); font-size:15px;">
-          我堅持只在台灣金管會與期交所合法架構下提供服務，拒絕誇大話術，確保每一位客戶的資金安全與交易體驗都在透明、受監管的軌道上運行。
-        </p>
+        <div class="eyebrow mono">02 / TRADING PLATFORMS</div>
+        <h2 class="sec-title">手機與電腦全方位下單工具</h2>
+        <p style="color:var(--muted); font-size:15px;">無論是通勤時的手機即時監控，或桌面端的專業量化與多螢幕看盤，兆豐期貨皆提供完整且穩定的下單軟體支援。</p>
+        <div class="plat-tabs">
+          <button class="plat-btn active" data-plat="mobile">手機看盤下單</button>
+          <button class="plat-btn" data-plat="pc">電腦專業軟體</button>
+        </div>
+        <div class="plat-list" id="platList"></div>
       </div>
-      <canvas id="orbitalCanvas" width="520" height="300"></canvas>
+      <canvas id="orbitalCanvas" width="520" height="280"></canvas>
     </div>
   </section>
 
-  <!-- 4. Timeline -->
-  <section id="timeline" class="content-sec reveal">
-    <div class="eyebrow mono">03 / MILESTONES</div>
-    <h2 class="sec-title">專業履歷與重要里程碑</h2>
-    <div class="tl-tabs">
-      <button class="tl-btn active" data-idx="0">2016 – 2019 深耕市場</button>
-      <button class="tl-btn" data-idx="1">2020 – 2023 建立品牌與教學</button>
-      <button class="tl-btn" data-idx="2">2024 – 至今 團隊領航</button>
+  <!-- 4. Core Products & Account Opening -->
+  <section id="products" class="content-sec reveal">
+    <div class="eyebrow mono">03 / PRODUCTS &amp; ONBOARDING</div>
+    <h2 class="sec-title">主打交易商品與開戶須知</h2>
+    <div class="prod-tabs">
+      <button class="prod-btn active" data-prod="tx">台指期</button>
+      <button class="prod-btn" data-prod="opt">選擇權</button>
+      <button class="prod-btn" data-prod="pro">兆期pro 策略投組</button>
+      <button class="prod-btn" data-prod="mc">MultiCharts</button>
+      <button class="prod-btn" data-prod="overseas">海外期貨</button>
     </div>
-    <div class="tl-box">
+    <div class="prod-box">
       <div>
-        <h3 id="tlTitle" style="font-size:22px; color:#fff; margin-bottom:10px;">2016 – 2019｜深耕國際金融與衍生性商品</h3>
-        <p id="tlDesc" style="color:var(--muted); font-size:15px;">考取專業金融證照並進入大型期貨機構，專責外匯、貴金屬與指數避險業務，累積扎實的盤中風控與高資產客戶服務經驗。</p>
+        <h3 id="prodTitle" style="font-size:22px; color:#fff; margin-bottom:10px;">台指期（TX / MTX / TMF）</h3>
+        <p id="prodDesc" style="color:var(--muted); font-size:15px;">台灣最具代表性的指數期貨商品，流動性佳、日盤與夜盤皆可交易，適合順勢波段與搭配現貨進行部位避險。</p>
       </div>
-      <ul class="tl-list" id="tlList">
-        <li>取得期貨／衍生性商品專業資格證照</li>
-        <li>協助企業與高資產客戶規劃避險部位</li>
-        <li>建立標準化新手風控檢核流程</li>
-      </ul>
+      <div style="background:var(--surface-2); border:1px solid var(--border-dim); border-radius:14px; padding:20px;">
+        <div style="font-size:12px; color:var(--silver-dim); margin-bottom:8px;">標準開戶流程（台灣合法期貨商）</div>
+        <div style="font-size:14px; color:#fff;">備妥雙證件＋約定銀行存摺，線上 6 步驟完成開戶簽署，開通後即可入金交易。</div>
+      </div>
+    </div>
+
+    <div class="bank-strip">
+      <div>
+        <strong style="color:#fff; font-size:15px;">約定以下 7 家銀行存摺，出入金免手續費：</strong>
+        <div style="font-size:13px; color:var(--muted); margin-top:4px;">合作金庫、第一銀行、國泰世華、兆豐國際、元大銀行、台新銀行、中國信託</div>
+      </div>
+      <button class="btn-silver" id="openModal3">諮詢開戶細節</button>
     </div>
   </section>
 
-  <!-- 5. Services -->
-  <section id="services" class="content-sec reveal">
-    <div class="eyebrow mono">04 / SERVICES</div>
-    <h2 class="sec-title">我能為你提供的專屬服務（點擊展開）</h2>
-    <div class="srv-grid">
-      <div class="srv-card open">
-        <h3 style="color:#fff; font-size:18px;">01. 一對一交易陪跑</h3>
-        <p style="font-size:13px; color:var(--muted); margin-top:6px;">從開戶、模擬單演練到實戰紀律。</p>
-        <div class="srv-more">依您的資金規模與作息，協助規劃停損比例與下單流程，並提供專屬線上開戶與系統操作指導。</div>
+  <!-- 5. Bright & Clear Education Hub -->
+  <section id="academy" class="content-sec reveal">
+    <div class="edu-panel">
+      <div class="eyebrow mono" style="color:#cbd5e1;">04 / LEARNING ACADEMY</div>
+      <h2 class="sec-title">交易知識與學習專區（分類導覽）</h2>
+      <div class="prod-tabs" style="margin-bottom:8px;">
+        <button class="prod-btn active" data-edu="all">全部主題</button>
+        <button class="prod-btn" data-edu="pro">兆期pro 策略投組</button>
+        <button class="prod-btn" data-edu="hedge">期貨避險</button>
+        <button class="prod-btn" data-edu="rookie">新手入門</button>
       </div>
-      <div class="srv-card">
-        <h3 style="color:#fff; font-size:18px;">02. 講座與企業培訓</h3>
-        <p style="font-size:13px; color:var(--muted); margin-top:6px;">總經趨勢、風險管理與交易心理。</p>
-        <div class="srv-more">受邀大專院校、金融機構與投資社群分享，將複雜市場機制轉化為人人都聽得懂的實務架構。</div>
-      </div>
-      <div class="srv-card">
-        <h3 style="color:#fff; font-size:18px;">03. 智能工具與資源</h3>
-        <p style="font-size:13px; color:var(--muted); margin-top:6px;">TradingView 面板與 API 支援。</p>
-        <div class="srv-more">提供多款輔助下單工具、新手學習地圖與每週市場重點整理，讓交易更有系統與依據。</div>
-      </div>
+      <div class="edu-grid" id="eduGrid"></div>
     </div>
   </section>
 
-  <!-- 6. Featured Works -->
-  <section id="media" class="content-sec reveal">
-    <div class="eyebrow mono">05 / FEATURED WORKS</div>
-    <h2 class="sec-title">精選影音、講座與專欄</h2>
-    <div class="filter-bar">
-      <button class="f-btn active" data-cat="all">全部內容</button>
-      <button class="f-btn" data-cat="video">影音教學</button>
-      <button class="f-btn" data-cat="talk">講座紀錄</button>
-      <button class="f-btn" data-cat="article">深度專欄</button>
-    </div>
-    <div class="media-grid" id="mediaGrid"></div>
+  <!-- 6. FAQ -->
+  <section id="faq" class="content-sec reveal">
+    <div class="eyebrow mono">05 / Q &amp; A</div>
+    <h2 class="sec-title" style="margin-bottom:18px;">常見問題</h2>
+    <div class="faq-item"><button class="faq-q">晚上或週末遇到問題找得到人嗎？<span>+</span></button><div class="faq-a">可以！我非常重視即時回覆，無論是夜盤、海外期貨時段或週末假日有任何疑問，皆可透過 LINE（ID：0982762949）聯繫我。</div></div>
+    <div class="faq-item"><button class="faq-q">哪些銀行可以約定出入金免手續費？<span>+</span></button><div class="faq-a">約定合作金庫、第一銀行、國泰世華、兆豐國際、元大、台新、中國信託存摺，出入金皆享有免手續費優惠。</div></div>
+    <div class="faq-item"><button class="faq-q">新手想學量化交易或兆期pro 策略投組，該如何開始？<span>+</span></button><div class="faq-a">歡迎直接加 LINE 或點擊右上角「預約諮詢」，我會依您的資金規模與需求，從基礎風控與平台操作帶您一步步上手。</div></div>
   </section>
 
   <footer>
-    <p>© 2026 您的名字（品牌稱號）｜OBSIDIAN SILVER EDITION · 投資交易具風險，請審慎評估。</p>
+    <div class="footer-info">
+      <div><strong>兆豐期貨總公司</strong> ｜ 專線：02-2327-9062 ｜ 地址：台北市忠孝東路二段95號2樓</div>
+      <div class="mono">許可證號：115年金管期總字第021號</div>
+    </div>
+    <div class="warning-box">
+      <strong>風險警語：</strong>期貨及選擇權交易財務槓桿高，具有一定風險，投資人應依自身財務能力審慎評估所能承受風險，並留意控管個人部位及投資風險。
+    </div>
   </footer>
 
   <!-- Modal -->
   <div class="modal-bg" id="modalBg">
     <div class="modal">
       <button id="closeModal" style="position:absolute; right:18px; top:14px; background:none; border:none; color:var(--muted); font-size:22px; cursor:pointer;">×</button>
-      <h3 style="margin-bottom:6px; color:#fff;">預約與【您的名字】一對一對話</h3>
-      <p style="font-size:13px; color:var(--muted); margin-bottom:18px;">留下聯絡方式，我將親自與您確認時間。</p>
+      <h3 style="margin-bottom:6px; color:#fff;">聯繫 楊鄭耀（阿偉）</h3>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">LINE ID：<strong style="color:#fff;">0982762949</strong> ｜ 專線：02-2327-9062</p>
       <form id="cForm">
         <input type="text" placeholder="您的稱呼" required />
-        <input type="text" placeholder="LINE ID 或聯絡電話" required />
-        <select><option>一對一開戶與新手引導</option><option>交易風控與工具討論</option><option>演講邀約／商業合作</option></select>
+        <input type="text" placeholder="您的 LINE ID 或聯絡電話" required />
+        <select><option>諮詢開戶與免手續費銀行</option><option>詢問兆期pro 策略投組 / MultiCharts</option><option>台指期 / 選擇權 / 海外期貨避險</option></select>
         <textarea rows="3" placeholder="想詢問的問題（選填）"></textarea>
-        <button type="submit" class="btn-silver" style="width:100%;">送出預約申請</button>
+        <button type="submit" class="btn-silver" style="width:100%; justify-content:center;">送出諮詢訊息</button>
       </form>
-      <div id="doneMsg" style="display:none; color:#fff; font-size:14px; margin-top:12px; text-align:center;">✓ 已收到您的訊息，將盡快與您聯繫！</div>
+      <div id="doneMsg" style="display:none; color:#fff; font-size:14px; margin-top:12px; text-align:center;">✓ 已收到您的訊息！也可直接加 LINE：0982762949 即時聯繫。</div>
     </div>
   </div>
 
@@ -372,12 +405,10 @@
       let pct = 0;
       const numEl = document.getElementById('loaderNum'), fillEl = document.getElementById('loaderFill'), pre = document.getElementById('preloader');
       const t = setInterval(() => {
-        pct += Math.floor(Math.random() * 14) + 6;
-        if (pct >= 100) {
-          numEl.textContent = '100'; fillEl.style.width = '100%'; clearInterval(t);
-          setTimeout(() => pre.classList.add('done'), 240);
-        } else { numEl.textContent = pct; fillEl.style.width = pct + '%'; }
-      }, 38);
+        pct += Math.floor(Math.random() * 14) + 7;
+        if (pct >= 100) { numEl.textContent = '100'; fillEl.style.width = '100%'; clearInterval(t); setTimeout(() => pre.classList.add('done'), 220); }
+        else { numEl.textContent = pct; fillEl.style.width = pct + '%'; }
+      }, 36);
     })();
 
     // Scroll Progress & Reveal
@@ -385,24 +416,14 @@
       const h = document.documentElement;
       document.getElementById('scrollBar').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + '%';
     });
-    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.12 });
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-    // Counters
-    document.querySelectorAll('.counter').forEach(el => {
-      const target = +el.dataset.target; let cur = 0; const step = Math.ceil(target / 45);
-      const timer = setInterval(() => {
-        cur += step;
-        if (cur >= target) { el.textContent = target.toLocaleString() + '+'; clearInterval(timer); }
-        else el.textContent = cur.toLocaleString();
-      }, 28);
-    });
 
     // Portrait 3D Tilt
     const card = document.getElementById('tiltCard');
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
-      card.style.transform = `perspective(800px) rotateX(${((e.clientY - r.top) / r.height - 0.5) * -8}deg) rotateY(${((e.clientX - r.left) / r.width - 0.5) * 8}deg)`;
+      card.style.transform = `perspective(800px) rotateX(${((e.clientY - r.top) / r.height - 0.5) * -7}deg) rotateY(${((e.clientX - r.left) / r.width - 0.5) * 7}deg)`;
     });
     card.addEventListener('mouseleave', () => card.style.transform = 'none');
 
@@ -427,23 +448,21 @@
       }
 
       const sec = document.getElementById('mindset');
-      function updatePointer(clientX, clientY) {
+      function updatePtr(cx, cy) {
         const r = sec.getBoundingClientRect();
-        targetRotY = ((clientX - r.left) / r.width - 0.5) * 1.3;
-        targetRotX = ((clientY - r.top) / r.height - 0.5) * 0.5;
-        document.getElementById('mouseHud').textContent = `X:${String(Math.round(clientX)).padStart(3,'0')} Y:${String(Math.round(clientY)).padStart(3,'0')}`;
+        targetRotY = ((cx - r.left) / r.width - 0.5) * 1.3;
+        targetRotX = ((cy - r.top) / r.height - 0.5) * 0.5;
+        document.getElementById('mouseHud').textContent = `X:${String(Math.round(cx)).padStart(3,'0')} Y:${String(Math.round(cy)).padStart(3,'0')}`;
       }
-      sec.addEventListener('mousemove', e => updatePointer(e.clientX, e.clientY));
-      sec.addEventListener('touchmove', e => {
-        if (e.touches && e.touches[0]) updatePointer(e.touches[0].clientX, e.touches[0].clientY);
-      }, { passive: true });
+      sec.addEventListener('mousemove', e => updatePtr(e.clientX, e.clientY));
+      sec.addEventListener('touchmove', e => { if (e.touches && e.touches[0]) updatePtr(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
       canvas.addEventListener('click', () => { burst = 1; });
       canvas.addEventListener('touchstart', () => { burst = 0.7; }, { passive: true });
 
       const minds = [
-        ['理性風控：在進場前先定義好退場線', '市場情緒永遠在貪婪與恐懼間擺盪。我協助客戶建立量化的倉位計算模型，讓每一筆決策都建立在冷靜的數學與機率之上。'],
-        ['全局視野：從總經脈動看懂資金流向', '不盲從單一消息面，結合利率政策、匯率週期與跨市場關聯性，帶您看懂機構法人的布局邏輯。'],
-        ['系統紀律：用工具取代人性弱點', '透過智慧單、停損機制與標準化檢核流程，把「該做的事」交給紀律與工具執行，降低情緒干擾。']
+        ['穩定的系統，才能帶來穩定的心態', '透過兆期pro 策略投組與 MultiCharts 邏輯回測，將進出場條件標準化，減少盤中情緒干擾，讓執行更純粹。'],
+        ['先控風險，再談穩健的財富累積', '從高中股票到大學量化的實戰體悟：把單筆最大虧損鎖在可承受範圍內，才能在市場中走得長久。'],
+        ['即時回覆，晚上與週末都找得到人', '無論是夜盤波動、海外期貨時段或假日策略疑問，我都提供即時的專人支援與解答。']
       ];
       document.querySelectorAll('.m-btn').forEach(b => b.onclick = () => {
         document.querySelectorAll('.m-btn').forEach(x => x.classList.remove('active'));
@@ -477,7 +496,7 @@
       function draw() {
         ctx.clearRect(0, 0, c.width, c.height); t += 0.012;
         const cx = c.width / 2, cy = c.height / 2;
-        [{ rx:165, ry:48, rot:-0.25 + Math.sin(t*0.4)*0.08, speed:t, a:0.75 }, { rx:130, ry:36, rot:0.35 + Math.cos(t*0.3)*0.08, speed:-t*1.3, a:0.45 }].forEach(r => {
+        [{ rx:160, ry:46, rot:-0.25 + Math.sin(t*0.4)*0.08, speed:t, a:0.75 }, { rx:125, ry:34, rot:0.35 + Math.cos(t*0.3)*0.08, speed:-t*1.3, a:0.45 }].forEach(r => {
           ctx.save(); ctx.translate(cx, cy); ctx.rotate(r.rot);
           ctx.strokeStyle = `rgba(226,232,240,${r.a})`; ctx.lineWidth = 1.2;
           ctx.beginPath(); ctx.ellipse(0, 0, r.rx, r.ry, 0, 0, Math.PI * 2); ctx.stroke();
@@ -490,42 +509,63 @@
       draw();
     })();
 
-    // Copy, Timeline, Services, Media, Modal
-    document.getElementById('copyLine').onclick = function() {
-      navigator.clipboard?.writeText('@yourid'); this.textContent = '✓ 已複製 LINE ID：@yourid';
-      setTimeout(() => this.textContent = '複製 LINE ID：@yourid', 2200);
+    // Copy LINE ID
+    document.getElementById('copyLine').onclick = function () {
+      navigator.clipboard?.writeText('0982762949');
+      this.textContent = '✓ 已複製 LINE ID：0982762949';
+      setTimeout(() => this.textContent = '複製 LINE ID：0982762949', 2200);
     };
-    const ms = [
-      ['2016 – 2019｜深耕國際金融與衍生性商品', '考取專業金融證照並進入大型期貨機構，專責外匯、貴金屬與指數避險業務，累積扎實的盤中風控與高資產客戶服務經驗。', ['取得期貨／衍生性商品專業資格證照', '協助企業與高資產客戶規劃避險部位', '建立標準化新手風控檢核流程']],
-      ['2020 – 2023｜建立教學體系與自媒體品牌', '創辦個人教學頻道與專欄，累計舉辦超過 50 場線上與實體講座，幫助投資人遠離海外黑平台。', ['突破 2,000 名以上學員與客戶追蹤', '製作多套免費新手入門學習地圖', '受邀各大投資論壇擔任專題講者']],
-      ['2024 – 至今｜專業團隊領航與全方位顧問', '擔任部門主管並持續推動「先控風險、再談獲利」理念，整合智能工具與一對一顧問服務。', ['整合 TradingView 與 API 智慧下單支援', '建立全天候客戶服務與風險教育體系', '持續產出深度市場解析與實戰筆記']]
-    ];
-    document.querySelectorAll('.tl-btn').forEach(b => b.onclick = () => {
-      document.querySelectorAll('.tl-btn').forEach(x => x.classList.remove('active')); b.classList.add('active');
-      const d = ms[+b.dataset.idx];
-      document.getElementById('tlTitle').textContent = d[0]; document.getElementById('tlDesc').textContent = d[1];
-      document.getElementById('tlList').innerHTML = d[2].map(i => `<li>${i}</li>`).join('');
-    });
-    document.querySelectorAll('.srv-card').forEach(c => c.onclick = () => c.classList.toggle('open'));
 
-    const works = [
-      { cat:'video', tag:'影音教學', title:'新手必看：如何在合法監管下建立第一套交易紀律', desc:'超過 5 萬次觀看，帶你從零認識風險控管與資金配置的核心邏輯。' },
-      { cat:'talk', tag:'講座紀錄', title:'2026 全球宏觀趨勢與避險策略論壇主講', desc:'受邀擔任年度金融論壇講者，現場超過 300 位投資人參與交流。' },
-      { cat:'article', tag:'深度專欄', title:'為什麼多數人看對方向卻還是虧損？談倉位管理', desc:'深入剖析情緒交易的盲點，提供可量化的單筆停損計算準則。' },
-      { cat:'video', tag:'影音教學', title:'交易心理學：克服追高殺低的三個實戰習慣', desc:'用實際案例拆解盤中決策流程，建立穩定的心態與執行力。' }
-    ];
-    function renderMedia(cat) {
-      const list = cat === 'all' ? works : works.filter(w => w.cat === cat);
-      document.getElementById('mediaGrid').innerHTML = list.map(w => `<div class="media-card"><small>${w.tag}</small><h4 style="color:#fff;margin:8px 0;">${w.title}</h4><p style="font-size:13px;color:var(--muted);">${w.desc}</p></div>`).join('');
+    // Platforms switcher
+    const plats = {
+      mobile: ['📱 兆豐行動VIP', '📱 兆期GO'],
+      pc: ['💻 全球理財通', '💻 新兆豐贏家', '💻 兆豐HTS']
+    };
+    function renderPlat(key) {
+      document.getElementById('platList').innerHTML = plats[key].map(p => `<div class="plat-chip">${p}</div>`).join('');
     }
-    document.querySelectorAll('.f-btn').forEach(b => b.onclick = () => {
-      document.querySelectorAll('.f-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); renderMedia(b.dataset.cat);
+    document.querySelectorAll('.plat-btn').forEach(b => b.onclick = () => {
+      document.querySelectorAll('.plat-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); renderPlat(b.dataset.plat);
     });
-    renderMedia('all');
+    renderPlat('mobile');
 
+    // Products switcher
+    const prods = {
+      tx: ['台指期（TX / MTX / TMF）', '台灣最具代表性的指數期貨商品，流動性佳、日盤與夜盤皆可交易，適合順勢波段與搭配現貨進行部位避險。'],
+      opt: ['臺指選擇權（TXO）', '買方風險有限、賣方具時間價值優勢，可依盤勢建構多元價差與避險組合策略。'],
+      pro: ['兆期pro 策略投組', '結合多組經過歷史驗證的量化交易策略進行投資組合配置，分散單一策略波動風險，追求穩健曲線。'],
+      mc: ['MultiCharts 程式交易', '支援 PowerLanguage 策略編寫、歷史回測、參數健壯性驗證與自動化下單串接，徹底消除人性猶豫。'],
+      overseas: ['海外期貨（海期）', '涵蓋美股指數、黃金、輕原油、外匯與農產品等全球熱門商品，近全天候交易，掌握國際宏觀行情。']
+    };
+    document.querySelectorAll('.prod-btn[data-prod]').forEach(b => b.onclick = () => {
+      document.querySelectorAll('.prod-btn[data-prod]').forEach(x => x.classList.remove('active')); b.classList.add('active');
+      document.getElementById('prodTitle').textContent = prods[b.dataset.prod][0];
+      document.getElementById('prodDesc').textContent = prods[b.dataset.prod][1];
+    });
+
+    // Bright Education Hub
+    const edus = [
+      { cat:'pro', tag:'兆期pro 策略投組', title:'多策略投組如何降低單一策略回檔？', desc:'解析趨勢策略與震盪策略互補配置，打造更平滑的資金曲線。' },
+      { cat:'hedge', tag:'期貨避險實務', title:'持有台股現貨時，如何用台指期有效避險？', desc:'計算部位 Beta 值與對沖口數，在系統性修正來臨時保護帳面資產。' },
+      { cat:'rookie', tag:'新手入門 · 技術分析', title:'K 線、均線與支撐壓力的實戰判讀', desc:'建立清晰客觀的進出場依據，不再憑感覺追高殺低。' },
+      { cat:'rookie', tag:'新手入門 · 量化交易', title:'從零認識量化回測與風控參數設定', desc:'為什麼回測勝率不是唯一指標？理解風報比與最大回撤（MDD）。' },
+      { cat:'rookie', tag:'新手入門 · 交易心態', title:'穩定的系統如何養出穩定的交易心態', desc:'拆解虧損後的報復性下單心理，建立標準化停損紀律。' }
+    ];
+    function renderEdu(cat) {
+      const list = cat === 'all' ? edus : edus.filter(e => e.cat === cat);
+      document.getElementById('eduGrid').innerHTML = list.map(e =>
+        `<div class="edu-card"><span class="edu-tag">${e.tag}</span><h4 style="color:#fff;font-size:16px;margin-bottom:8px;">${e.title}</h4><p style="font-size:13px;color:#cbd5e1;">${e.desc}</p></div>`
+      ).join('');
+    }
+    document.querySelectorAll('.prod-btn[data-edu]').forEach(b => b.onclick = () => {
+      document.querySelectorAll('.prod-btn[data-edu]').forEach(x => x.classList.remove('active')); b.classList.add('active'); renderEdu(b.dataset.edu);
+    });
+    renderEdu('all');
+
+    // FAQ & Modal
+    document.querySelectorAll('.faq-q').forEach(q => q.onclick = () => q.parentElement.classList.toggle('open'));
     const m = document.getElementById('modalBg');
-    document.getElementById('openModal').onclick = () => m.classList.add('open');
-    document.getElementById('openModal2').onclick = () => m.classList.add('open');
+    ['openModal','openModal2','openModal3'].forEach(id => document.getElementById(id).onclick = () => m.classList.add('open'));
     document.getElementById('closeModal').onclick = () => m.classList.remove('open');
     document.getElementById('cForm').onsubmit = e => { e.preventDefault(); document.getElementById('doneMsg').style.display = 'block'; };
   </script>
